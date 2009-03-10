@@ -1,0 +1,9 @@
+*.bak
+*~
+*.tar.gz
+.*.swp
+Makefile
+blib
+pm_to_blib
+Build
+_build

@@ -5,7 +5,7 @@ package MooseX::Alien;
 use strict;
 use warnings;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 # Cannot import from Moose::Role as that would call init_meta, but without metaclass
 use Moose::Role ();
@@ -15,7 +15,8 @@ Moose::Role->init_meta(
   metaclass => 'MooseX::Alien::Meta'
 );
 
-__PACKAGE__->Moose::Role::around(
+
+($Moose::VERSION >= 0.90 ? __PACKAGE__->meta : __PACKAGE__)->Moose::Role::around(
   'new' => sub {
     my $orig   = shift;
     my $obj    = $orig->(@_);
@@ -85,7 +86,7 @@ a HASHREF and the constructor must accept either a list of name/value pairs or a
 
 =head1 SEE ALSO
 
-L<Moose::Cookbook::FAQ>
+L<Moose::Cookbook::FAQ> L<MooseX::NonMoose>
 
 =head1 AUTHOR
 

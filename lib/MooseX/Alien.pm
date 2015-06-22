@@ -78,7 +78,7 @@ The fact that Moose objects are hashrefs means it is easy to use
 Moose to extend non-Moose classes, as long as they too are hash
 references.
 
-This role usses an approach similar to the defined in L<Moose::Cookbook::FAQ>.
+This role uses an approach similar to the one defined in L<Moose::Cookbook::FAQ>.
 However this role will call BUILDARGS and BUILDALL
 
 This approach may not work for all classes. The alien class must be implemented using
